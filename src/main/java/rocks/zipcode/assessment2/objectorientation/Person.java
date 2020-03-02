@@ -32,7 +32,7 @@ public class Person {
 
     public Long getId() {
 
-        return id;
+        return this.id;
     }
 
     public void setId(Long id) {
@@ -42,7 +42,7 @@ public class Person {
 
     public String getName() {
 
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -52,7 +52,7 @@ public class Person {
 
     public Address getAddress() {
 
-        return address;
+        return this.address;
     }
 
     public void setAddress(Address address) {
@@ -63,8 +63,7 @@ public class Person {
     @Override
     public boolean equals(Object o) {
 
-
-        return (Boolean)null;
+       return (Boolean)null;
     }
 
     @Override

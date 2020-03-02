@@ -95,14 +95,7 @@ public class Address {
     @Override
     public boolean equals(Object o) {
 
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-
-        //if (this == o) {
-            return true;
-        }
-
-
-
+        return (Boolean)null;
+    }
 }
+
