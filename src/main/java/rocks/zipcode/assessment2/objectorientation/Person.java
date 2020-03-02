@@ -71,6 +71,9 @@ public class Person {
         }
         Person person = (Person) o;
         return id.equals(person.id) && name.equals(person.name) && address.equals(person.address);
+//        && address.equals(address.getAddressLine1()) && address.equals(person.address.getAddressLine2()) &&
+//                address.equals(person.address.getCity()) && address.equals(person.address.getState()) &&
+//                address.equals(person.address.getZipcode());
     }
 
     @Override
