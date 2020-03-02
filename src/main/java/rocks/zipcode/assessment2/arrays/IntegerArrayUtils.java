@@ -1,5 +1,9 @@
 package rocks.zipcode.assessment2.arrays;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * @author leon on 28/11/2018.
  */
@@ -11,9 +15,12 @@ public class IntegerArrayUtils {
      */
     public static Integer[] add(Integer[] integerArray, Integer valueToBeAdded) {
 
-
-
-        return null;
+        Integer[] newArray = new Integer[integerArray.length+1];
+        for (int p =0; p<integerArray.length; p++) {
+            newArray[p]=integerArray[p];
+        }
+        newArray[integerArray.length] = valueToBeAdded;
+        return newArray;
 
     }
 
@@ -24,8 +31,12 @@ public class IntegerArrayUtils {
      * @return `integerArray` with `valueToBeInserted` at index number `indexToInsertAt`
      */
     public static Integer[] replace(Integer[] integerArray, int indexToInsertAt, Integer valueToBeInserted) {
-        return null;
+
+        integerArray[indexToInsertAt] = valueToBeInserted;
+        return integerArray;
     }
+
+
 
     /**
      * @param integerArray - array to be evaluated
@@ -33,7 +44,8 @@ public class IntegerArrayUtils {
      * @return element located at `indexToFetch`
      */
     public static Integer get(Integer[] integerArray, Integer indexToFetch) {
-        return null;
+
+        return integerArray[indexToFetch];
     }
 
     /**
@@ -41,7 +53,11 @@ public class IntegerArrayUtils {
      * @return identical array with even-values incremented by 1 and odd-values decremented by 1
      */
     public static Integer[] incrementEvenDecrementOdd(Integer[] integerArray) {
-        return null;
+
+        for (int p=0; p<integerArray.length; p++)
+        if (integerArray[p]%2 == 0) {integerArray[p]=integerArray[p]+1;}
+        else integerArray[p]=integerArray[p]-1;
+        return integerArray;
     }
 
     /**
@@ -49,7 +65,10 @@ public class IntegerArrayUtils {
      * @return identical array with even-values incremented by 1
      */
     public static Integer[] incrementEven(Integer[] integerArray) {
-        return null;
+
+        for (int p=0; p<integerArray.length; p++)
+            if (integerArray[p]%2 == 0) {integerArray[p]=integerArray[p]+1;}
+        return integerArray;
     }
 
     /**
@@ -57,6 +76,10 @@ public class IntegerArrayUtils {
      * @return identical array with odd-values decremented by 1
      */
     public static Integer[] decrementOdd(Integer[] input) {
-        return null;
+
+        for (int p=0; p<input.length; p++)
+            if (input[p]%2 != 0) {input[p]=input[p]-1;}
+        return input;
+
     }
 }

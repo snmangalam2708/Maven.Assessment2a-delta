@@ -38,8 +38,7 @@ public class MonthConversion {
      * @return - the ordinal of the month in the year
      */
     public int getNumber(String monthName) {
-
-        //Integer monthNo = 0;
+        
         Set<Map.Entry<Integer, String>> set = myMap.entrySet();
         for (Map.Entry<Integer, String> iterator : set) {
             if (iterator.getValue().equals(monthName)) {
