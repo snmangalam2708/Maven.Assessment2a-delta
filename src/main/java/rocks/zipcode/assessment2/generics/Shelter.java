@@ -1,8 +1,12 @@
 package rocks.zipcode.assessment2.generics;
 
 
+import rocks.zipcode.assessment2.generics.ageable.Ageable;
+
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.function.Consumer;
+
 
 /**
  * Shelter is a generic class that holds Objects that extends `Ageable`.
@@ -11,15 +15,18 @@ import java.util.Iterator;
  * Shelter<Person> farmHouse = new Shelter<Person>();
  * Shelter<Dog> dogHouse = new Shelter<Dog>();
  */
-public class Shelter<T> {
+public class Shelter<T> implements Iterator<T> {
 
     private ArrayList<T> ageables;
 
 
     public Shelter() {
 
-        this.ageables = new ArrayList<T> ();
-        throw new NullPointerException();
+        this.ageables = new ArrayList<T>();
+
+        if (this.ageables == null) {
+            throw new NullPointerException();
+        }
     }
 
     /**
@@ -28,7 +35,6 @@ public class Shelter<T> {
     public int size() {
 
         return ageables.size();
-
     }
 
     public void add(Object object) {
@@ -53,11 +59,89 @@ public class Shelter<T> {
 
     public Integer getIndexOf(Object ageable) {
 
-        for (int i = 0; i < ageables.size(); i++) {
-            if(ageables.get(i).equals(ageable)){
+        int i = 0;
+        for (i = 0; i < ageables.size(); i++) {
+            if (ageables.get(i).equals(ageable)) {
                 return i;
             }
         }
         return -1;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @Override
+    public boolean hasNext() {
+        return false;
+    }
+
+    @Override
+    public T next() {
+        return null;
+    }
+
+    @Override
+    public void remove() {
+
+    }
+
+    @Override
+    public void forEachRemaining(Consumer<? super T> action) {
+
     }
 }
