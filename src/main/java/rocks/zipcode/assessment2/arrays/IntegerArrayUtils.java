@@ -21,7 +21,6 @@ public class IntegerArrayUtils {
         }
         newArray[integerArray.length] = valueToBeAdded;
         return newArray;
-
     }
 
     /**
