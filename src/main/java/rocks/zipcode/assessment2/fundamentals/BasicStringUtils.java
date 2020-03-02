@@ -7,7 +7,8 @@ public class BasicStringUtils {
      * @return concatenation of `string1` and `string2`
      */
     public static String concatentate(String string1, String string2) {
-        return null;
+
+        return string1 + string2;
     }
 
     /**
@@ -15,7 +16,10 @@ public class BasicStringUtils {
      * @return an identical string with characters in reverse order
      */
     public static String reverse(String string1) {
-        return null;
+
+        StringBuilder newString = new StringBuilder(string1);
+        newString.reverse();
+        return newString.toString();
     }
 
     /**
@@ -24,7 +28,14 @@ public class BasicStringUtils {
      * @return concatenation of the reverse of `string1` and reverse of `string2`
      */
     public static String reverseThenConcatenate(String string1, String string2) {
-        return null;
+
+        StringBuilder newString1 = new StringBuilder(string1);
+        StringBuilder newString2 = new StringBuilder(string2);
+        StringBuilder reversed = new StringBuilder();
+        newString1.reverse();
+        newString2.reverse();
+
+        return String.valueOf(reversed.append(newString1).append(newString2));
     }
 
     /**
@@ -33,7 +44,15 @@ public class BasicStringUtils {
      * @return `string` with `charactersToRemove` removed
      */
     public static String removeCharacters(String string, String charactersToRemove) {
-        return null;
+
+
+        String[] charsToRemoveArray = charactersToRemove.split("");
+        for (int i = 0; i < charsToRemoveArray.length; i++) {
+
+            string = string.replace(charsToRemoveArray[i], "");
+
+        }
+        return string;
     }
 
     /**
@@ -42,6 +61,8 @@ public class BasicStringUtils {
      * @return reverse of `string` with `charactersToRemove` removed
      */
     public static String removeCharactersThenReverse(String string, String charactersToRemove) {
-        return null;
+
+        String charsRemoved = removeCharacters(string, charactersToRemove);
+        return reverse(charsRemoved);
     }
 }
