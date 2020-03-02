@@ -95,8 +95,17 @@ public class Address {
     @Override
     public boolean equals(Object o) {
 
+        if (this == o){
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Address address = (Address) o;
+        return addressLine1.equals(address.addressLine1) && addressLine2.equals(address.addressLine2) &&
+                city.equals(address.city) && state.equals(address.state) && zipcode.equals(address.zipcode);
+        }
 
-        return (Boolean)null;
     }
-}
+
 
