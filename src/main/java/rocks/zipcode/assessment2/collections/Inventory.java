@@ -57,7 +57,6 @@ public class Inventory {
             if (myItem.equals(item)){
                 c++;
             }
-
     return c;
     }
 }

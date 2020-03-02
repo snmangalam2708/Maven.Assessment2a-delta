@@ -24,9 +24,9 @@ public class Person {
 
     public Person() {
 
-        Long id = 12345678910L;
-        String name = "";
-        Address address = new Address();
+        this.id = Long.MIN_VALUE;
+        this.name = "";
+        this.address = new Address();
 
     }
 
@@ -62,6 +62,15 @@ public class Person {
 
     @Override
     public boolean equals(Object o) {
+
+
         return (Boolean)null;
     }
+
+    @Override
+    public String toString() {
+
+        return "Person{" + "id=" + id + ", name='" + name + '\'' + ", address=" + address + '}';
+    }
+
 }
